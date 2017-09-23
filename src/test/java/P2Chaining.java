@@ -10,9 +10,9 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 public class P2Chaining {
     @Test
-    public void test() throws Exception {
+    public void test() {
         // assertJ
-        Assertions.assertThat(asList("a","b"))
+        Assertions.assertThat(asList("a", "b"))
                 .contains("a")
                 .hasSize(2);
 
