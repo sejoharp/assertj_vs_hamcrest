@@ -1,3 +1,5 @@
 public class P6Migration {
-    // scripts
+    // scripts for
+    // testng -> assertJ
+    // hamcrest -> assertJ
 }

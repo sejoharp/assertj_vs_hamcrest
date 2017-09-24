@@ -10,15 +10,17 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 public class P2Chaining {
     @Test
-    public void test() {
-        // assertJ
+    public void tstWithHamcrest() {
+        List<String> actual = asList("a", "b");
+
+        MatcherAssert.assertThat(actual, hasItem("a"));
+        MatcherAssert.assertThat(actual, hasSize(2));
+    }
+
+    @Test
+    public void testWithAssertJ() {
         Assertions.assertThat(asList("a", "b"))
                 .contains("a")
                 .hasSize(2);
-
-        // hamcrest
-        List<String> actual = asList("a", "b");
-        MatcherAssert.assertThat(actual, hasItem("a"));
-        MatcherAssert.assertThat(actual, hasSize(2));
     }
 }

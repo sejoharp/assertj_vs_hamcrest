@@ -7,13 +7,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class P1Fluent {
     @Test
-    public void test() {
-        // assertJ
-        Assertions.assertThat("testString").isEqualTo("testString");
-        Assertions.assertThat("testString").contains("test");
-
-        // hamcrest
+    public void testWithHamcrest() {
         MatcherAssert.assertThat("testString", equalTo("testString"));
         MatcherAssert.assertThat("testString", containsString("test"));
+    }
+
+    @Test
+    public void testWithAssertJ() {
+        Assertions.assertThat("testString").isEqualTo("testString");
+        Assertions.assertThat("testString").contains("test");
     }
 }

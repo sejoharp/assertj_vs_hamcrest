@@ -7,15 +7,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class P3ExceptionTesting {
     @Test
-    public void assertJ() throws Exception {
-        Throwable thrown = catchThrowable(() -> throwException());
-
-        Assertions.assertThat(thrown)
-                .hasMessageContaining("boom");
-    }
-
-    @Test
-    public void hamcrest() throws Exception {
+    public void testWithHamcrest() {
         try {
             throwException();
         } catch (RuntimeException e) {
@@ -24,8 +16,16 @@ public class P3ExceptionTesting {
     }
 
     @Test(expectedExceptions = RuntimeException.class)
-    public void testng() throws Exception {
+    public void testWithTestng() {
         throwException();
+    }
+
+    @Test
+    public void testWithAssertJ() {
+        Throwable thrown = catchThrowable(() -> throwException());
+
+        Assertions.assertThat(thrown)
+                .hasMessageContaining("boom");
     }
 
     private static void throwException() throws RuntimeException {
